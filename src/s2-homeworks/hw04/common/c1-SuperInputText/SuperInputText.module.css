@@ -1,0 +1,100 @@
+/* Базовые стили инпута */ 
+.input {
+    width: 372px;
+    padding: 10px 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    border: 1px solid #D9D9D9;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    color: #333333;
+    background-color: #FFFFFF;
+}
+
+/* Состояние фокуса (улучшенное) */
+.input:focus {
+    outline: none;
+    border-color: #0080FF;
+    box-shadow: 0 0 0 2px rgba(0, 128, 255, 0.2);
+}
+
+/* Обертка для группировки инпута и лейбла/ошибки */
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Уменьшил отступ для компактности */
+    width: 100%;
+    max-width: 372px;
+}
+
+/* Кастомный стиль инпута */
+.superInput {
+    border-color: #0080FF;
+}
+
+/* Стили для ошибки */
+.errorInput {
+    border-color: #FF1A47;
+    background-color: rgba(255, 26, 71, 0.05); /* Легкий красный фон */
+}
+
+.errorInput:focus {
+    border-color: #B21232;
+    box-shadow: 0 0 0 2px rgba(178, 18, 50, 0.2);
+}
+
+.error {
+    color: #B21232;
+    font-size: 12px;
+    margin-top: -4px; /* Корректировка позиции */
+    min-height: 16px; /* Чтобы сохранить место при отсутствии текста */
+}
+
+/* Дополнительные состояния */
+.input:disabled {
+    background-color: #F5F5F5;
+    color: #999999;
+    cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+/* 
+.input:focus {
+    outline: 1px solid #88bef4;
+}
+
+.input {
+    width: 372px;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.superInput {
+    outline: 1px solid #0080FF;
+
+}
+
+.errorInput {
+    outline: 1px solid #FF1A47;
+}
+
+.errorInput:focus {
+     outline: 1px solid #B21232;
+}
+
+.error {
+    color: #B21232
+} */

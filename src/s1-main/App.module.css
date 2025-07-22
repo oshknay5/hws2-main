@@ -1,0 +1,14 @@
+.App {
+    --header_height: 60px;
+}
+
+.hw {
+   max-width: 1240px;
+   width: 100%;
+
+}
+
+.hwTitle {
+ color: #0000;
+ font-size: 22px;
+}
