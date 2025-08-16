@@ -1,22 +1,22 @@
 .select {
     /* Основные стили */
-    padding: 10px 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    color: #333;
-    background-color: white;
-    cursor: pointer;
-    outline: none;
-    transition: all 0.3s ease;
-    width: 100%;
-    max-width: 300px;
-    z-index:20000;
+    /*padding: 10px 15px;*/
+    /*border: 1px solid #ccc;*/
+    /*border-radius: 4px;*/
+    /*font-size: 16px;*/
+    /*color: #333;*/
+    /*background-color: white;*/
+    /*cursor: pointer;*/
+    /*outline: none;*/
+    /*transition: all 0.3s ease;*/
+    /*width: 100%;*/
+    /*max-width: 300px;*/
+    /*z-index:20000;*/
 
-    /* Убираем стандартный вид в разных браузерах */
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    /*!* Убираем стандартный вид в разных браузерах *!*/
+    /*appearance: none;*/
+    /*-webkit-appearance: none;*/
+    /*-moz-appearance: none;*/
 
 }
 
@@ -24,10 +24,12 @@
     border-color: #3369F3;
     box-shadow: 0 0 0 2px rgba(51, 105, 243, 0.2);
 
+
 }
 
 
 .option:hover {
     background-color: #f0f0f0;
     color: #3369F3;
+
 }
