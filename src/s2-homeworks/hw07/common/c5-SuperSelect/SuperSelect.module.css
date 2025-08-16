@@ -11,6 +11,7 @@
     transition: all 0.3s ease;
     width: 100%;
     max-width: 300px;
+    z-index:20000;
 
     /* Убираем стандартный вид в разных браузерах */
     appearance: none;
