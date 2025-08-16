@@ -1,13 +1,13 @@
 .sidebar {
     background-color: #ffffff;
     height: 100vh;
-    width: 350px;
+    width: 370px;
     position: fixed;
     top: 0;
     left: 0;
     visibility: hidden;
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateX(-1000px);
     z-index: 1000;
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease; /* Упрощаем transition */
@@ -87,6 +87,7 @@
     position: absolute;
     top: 20px;
     right: 25px;
+    z-index: 2000;
     background: none;
     border: none;
     cursor: pointer;

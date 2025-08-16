@@ -57,7 +57,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         className={({isActive}) =>
                             isActive ? s.active : " "}
                     >
-                        Junior Plus
+                        Junior PLUS
                     </NavLink>
                 </nav>
             </aside>
