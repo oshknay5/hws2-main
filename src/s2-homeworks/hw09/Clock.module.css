@@ -1,14 +1,62 @@
+
 .buttonsContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.buttonsContainer > button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    background: #4b6cb7;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.buttonsContainer > button:disabled {
+    background: #7c7d80;
 }
 
 .clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #7e92dd, #e18585, #f5dbaa);
+    color: #0066CC;
+    line-height: 1.2;
+    min-height: 50vh;
+    padding: 10px;
 }
 
 .watch {
+    font-size: 20px;
+    color: #231d1d;
+    padding: 10px;
+    background: #f0f5ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .watch strong {
+    font-weight: bold;
 }
 
 .more {
+    font-size: 14px;
+    color: #403838;
+    padding: 10px;
+    cursor: pointer;
+
 }
+
+.watch:hover {
+    border-color: #4b6cb7;
+    background: #e6f0ff;
+}
+
