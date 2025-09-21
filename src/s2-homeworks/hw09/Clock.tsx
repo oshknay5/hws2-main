@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import {restoreState} from '../hw06/localStorage/localStorage'
 import s from './Clock.module.css'
-import {isDisabled} from "@testing-library/user-event/dist/utils";
+
 
 function Clock() {
     const [timerId, setTimerId] = useState<number | undefined>(undefined)
