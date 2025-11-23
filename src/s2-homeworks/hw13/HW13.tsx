@@ -19,6 +19,7 @@ const HW13 = () => {
     const [text, setText] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
+    const [loading, setLoading] = useState(false)
 
     const send = (x?: boolean | null) => () => {
         const url =
@@ -30,21 +31,46 @@ const HW13 = () => {
         setImage('')
         setText('')
         setInfo('...loading')
+        setLoading(true)
 
         axios
             .post(url, {success: x})
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
+                setText(res.data?.errorText || '...всё ок')
+                setInfo(res.data?.info || 'код 200 - обычно означает что скорее всего всё ок')
                 // дописать
-
             })
             .catch((e) => {
                 // дописать
+                if (e.response) {
+                    // Сервер ответил с ошибкой
+                    const status = e.response.status
+                    const data = e.response.data
 
+                    if (status === 400) {
+                        setCode('Ошибка 400!')
+                        setImage(error400)
+                        setText(data?.errorText || 'Ты не отправил success в body вообще!')
+                        setInfo(data?.info || 'ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
+                    } else if (status === 500) {
+                        setCode('Ошибка 500!')
+                        setImage(error500)
+                        setText(data?.errorText || 'эмитация ошибки на сервере')
+                        setInfo(data?.info || 'ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)')
+                    } else {
+                        setCode('Error!')
+                        setImage(errorUnknown)
+                        setText('Network Error')
+                        setInfo('Axios Error')
+                    }
+                }
+            })
+            .finally(() => {
+                setLoading(false)
             })
     }
-
     return (
         <div id={'hw13'}>
             <div className={s2.hwTitle}>Homework #13</div>
@@ -56,6 +82,7 @@ const HW13 = () => {
                         onClick={send(true)}
                         xType={'secondary'}
                         // дописать
+                        disabled={loading}
 
                     >
                         Send true
@@ -65,6 +92,7 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
+                        disabled={loading}
 
                     >
                         Send false
@@ -74,6 +102,7 @@ const HW13 = () => {
                         onClick={send(undefined)}
                         xType={'secondary'}
                         // дописать
+                        disabled={loading}
 
                     >
                         Send undefined
@@ -83,6 +112,7 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         // дописать
+                        disabled={loading}
 
                     >
                         Send null

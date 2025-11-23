@@ -1,22 +1,134 @@
+
+/* HW13.module.css */
+
 .buttonsContainer {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 50px;
+}
+.buttonsContainer >button{
+    padding: 7px;
+    color: #0066CC;
+    border-radius: 5px;
+    border: 1px solid #0066CC;
 }
 
+
 .responseContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    min-height: 200px;
 }
 
 .imageContainer {
+    flex-shrink: 0;
 }
 
 .image {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
 }
 
-.textContainer{
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
 }
 
 .code {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
 }
 
 .text {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
 }
+
 .info {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Стили для состояний кнопок */
+.buttonsContainer button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .responseContainer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .buttonsContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buttonsContainer button {
+        width: 200px;
+    }
+
+    .image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .code {
+        font-size: 24px;
+    }
+}
+
+
+/* Дополнительные стили для разных статусов (опционально) */
+.code[style*="Код 200"] {
+    color: #4CAF50; /* зеленый для успеха */
+}
+
+.code[style*="Ошибка 400"] {
+    color: #FF9800; /* оранжевый для клиентской ошибки */
+}
+
+.code[style*="Ошибка 500"] {
+    color: #F44336; /* красный для серверной ошибки */
+}
+
+.code[style*="Error"] {
+    color: #9C27B0; /* фиолетовый для неизвестных ошибок */
+}
+
+
+/* App.module.css */
+.hwTitle {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.hw {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: white;
+    margin-bottom: 20px;
 }
