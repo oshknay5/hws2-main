@@ -16,22 +16,56 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
         page, itemsCountForPage, totalCount, onChange, id = 'hw15',
     }
 ) => {
-    const lastPage = 10 // пишет студент // вычислить количество страниц
+    const lastPage = Math.ceil(totalCount/itemsCountForPage)// 10 пишет студент // вычислить количество страниц
 
-    const onChangeCallback = (event: any, page: number) => {
+    const onChangeCallback = (event: React.ChangeEvent<unknown>, page: number) => {
         // пишет студент
+        onChange(page, itemsCountForPage)
     }
 
-    const onChangeSelect = (event: any) => {
+    const onChangeSelect = (event: React.ChangeEvent<HTMLSelectElement> ) => {
         // пишет студент
+        const newCount = Number(event.target.value)
+
+        onChange(1, newCount) // При изменении количества элементов на странице переходим на 1ю страницу
+
     }
 
     return (
         <div className={s.pagination}>
             <Pagination
                 id={id + '-pagination'}
-                sx={{
-                    // стили для Pagination // пишет студент
+                sx={{ //стили пишет студент
+                    '& .MuiPaginationItem-root': {
+                        fontSize: '13px',
+                        fontFamily: "'Segoe UI', sans-serif",
+                        fontWeight: 400,
+                        color: '#666666',
+                        minWidth: '24px',
+                        height: '24px',
+                        margin: '0 1px',
+                        borderRadius: '0',
+                        border: 'none',
+                        backgroundColor: 'transparent',
+                        '&:hover': {
+                            backgroundColor: '#F0F0F0',
+                        },
+                    },
+                    '& .MuiPaginationItem-root.Mui-selected': {
+                        backgroundColor: '#0078D4',
+                        color: '#FFFFFF',
+                        fontWeight: 600,
+                        '&:hover': {
+                            backgroundColor: '#106EBE',
+                        },
+                    },
+                    '& .MuiPaginationItem-root.Mui-disabled': {
+                        color: '#CCCCCC',
+                        backgroundColor: 'transparent',
+                    },
+                    '& .MuiPaginationItem-ellipsis': {
+                        color: '#666666',
+                    },
                 }}
                 page={page}
                 count={lastPage}
